@@ -2,7 +2,7 @@
 > **Course:** [COSC 4368: Fundamentals of Artificial Intelligence](https://www2.cs.uh.edu/~ceick/4368.html)  
 > **Term:** Spring 2026  
 > **Instructor:** [Dr. Christoph F. Eick](https://www2.cs.uh.edu/~ceick/4368.html?id=601)  
-> **Group:** [Insert Group Number]  
+> **Group:** [Group 16]  
 > **Deadline:** April 3, 2026  
 
 ---
