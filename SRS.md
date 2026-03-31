@@ -1,6 +1,27 @@
-## 3. Work Breakdown Structure & Detailed Role Assignments
+# Software Requirements Specification (SRS)
+> **Project Title:** Task 3 — Adversarial Search: Connect Four Intelligent Agent
+> **Course:** COSC 4368: Fundamentals of Artificial Intelligence (Spring 2026)
+> **Group:** 16
+> **Deadline:** April 3, 2026
 
-To guarantee equitable distribution of labor and establish clear accountability for the final project report, engineering responsibilities are strictly compartmentalized as follows:
+---
+
+## 1. System Architecture & Requirements
+
+### 1.1 Functional Requirements
+* **State Representation:** The system shall model a standard 7x6 Connect Four grid, accurately enforcing spatial constraints and piece gravity.
+* **Terminal State Detection:** The system shall accurately identify win, loss, and draw conditions (four contiguous pieces).
+* **Adversarial Search:** The system shall calculate optimal moves using a recursive Minimax decision rule bounded by a configurable depth limit.
+* **Search Optimization:** The system shall implement Alpha-Beta pruning to systematically bypass the evaluation of provably suboptimal branches.
+* **Static Evaluation:** The system shall apply a linear combination of weighted features to approximate the utility $U(s)$ of non-terminal states.
+
+### 1.2 Non-Functional Requirements
+* **Computational Efficiency:** The agent shall return a subsequent move decision within a maximum threshold of 2.0 seconds per turn.
+* **Algorithmic Integrity:** The implementation of pruning shall strictly maintain the Alpha-Beta property.
+
+---
+
+## 2. Work Breakdown Structure & Detailed Role Assignments
 
 ### Role 1: Game Engine & State Logic
 **Assigned to:** KevinPham0418
@@ -56,3 +77,12 @@ To guarantee equitable distribution of labor and establish clear accountability 
   * Development of the main game loop, including handling human input validation and triggering the AI's response.
   * Enforcement of version control standards within the repository (e.g., ensuring no broken code is merged into the `main` branch).
   * Leadership and final editorial control over the mandatory 4-6 page academic report, ensuring all individual contributions are thoroughly documented and cited.
+ ---
+
+## 3. Accelerated Development Milestones (3-Day Sprint)
+| Date | Milestone | Assigned Roles | Status |
+| :--- | :--- | :--- | :--- |
+| **Mar 31** | **Architecture Validation:** Core 7x6 board logic and win-detection completed. | Role 1 & 6 | 🏃 In Progress |
+| **Apr 01** | **Core AI & Heuristics:** Standard Minimax implemented. Static board evaluation designed. | Role 2 & 4 | ⏳ Pending |
+| **Apr 02** | **Optimization & Data:** Alpha-Beta pruning integrated. Automation scripts run. | Role 3 & 5 | ⏳ Pending |
+| **Apr 03** | **Final Submission:** Codebase integration freeze and final 4-6 page report submitted. | All Members | ⏳ Pending |
