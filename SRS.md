@@ -82,7 +82,7 @@
 ## 3. Accelerated Development Milestones (3-Day Sprint)
 | Date | Milestone | Assigned Roles | Status |
 | :--- | :--- | :--- | :--- |
-| **Mar 31** | **Architecture Validation:** Core 7x6 board logic and win-detection completed. | Role 1 & 6 | 🏃 In Progress |
-| **Apr 01** | **Core AI & Heuristics:** Standard Minimax implemented. Static board evaluation designed. | Role 2 & 4 | ⏳ Pending |
-| **Apr 02** | **Optimization & Data:** Alpha-Beta pruning integrated. Automation scripts run. | Role 3 & 5 | ⏳ Pending |
-| **Apr 03** | **Final Submission:** Codebase integration freeze and final 4-6 page report submitted. | All Members | ⏳ Pending |
+| **Mar 31** | **Architecture Validation:** Core 7x6 board logic and win-detection completed. | Role 1 & 6 | In Progress |
+| **Apr 01** | **Core AI & Heuristics:** Standard Minimax implemented. Static board evaluation designed. | Role 2 & 4 | Pending |
+| **Apr 02** | **Optimization & Data:** Alpha-Beta pruning integrated. Automation scripts run. | Role 3 & 5 | Pending |
+| **Apr 03** | **Final Submission:** Codebase integration freeze and final 4-6 page report submitted. | All Members | Pending |
