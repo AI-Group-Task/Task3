@@ -1,4 +1,5 @@
 from board_logic import Connect4Board, PLAYER_1, PLAYER_2, EMPTY
+from heuristic_evaluator import evaluate_board
 
 # ==============================================================================
 # CONSTANTS
@@ -117,7 +118,7 @@ def alpha_beta_pruning(board: Connect4Board,
 
     # BASE CASE 2: Depth limit reached — evaluate the board heuristically
     if depth == 0:
-        score = _placeholder_evaluate(board, AI_PLAYER)
+        score = evaluate_board(board, AI_PLAYER)
         return score, None
 
     # RECURSIVE CASE
