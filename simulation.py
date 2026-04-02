@@ -1,6 +1,6 @@
-import random
 import time
-from board_logic import Connect4Board
+from board_logic import Connect4Board, PLAYER_1, PLAYER_2
+from minimax_search import get_best_move
 
 def run_ai_simulation():
     print("\n--- Starting AI vs AI Simulation ---")
@@ -9,31 +9,29 @@ def run_ai_simulation():
     turn = 0 
     
     while not game_over:
-        player_num = turn + 1
-        print(f"\nCurrent Board (0=Empty, 1=AI 1, 2=AI 2):")
+        current_player = PLAYER_1 if turn == 0 else PLAYER_2
+        print(f"\nCurrent Board (AI 1 vs AI 2):")
         board.print_board()
         
-        print(f"AI {player_num} is thinking...")
-        time.sleep(0.5) 
+        print(f"AI {current_player} is thinking...")
+        time.sleep(0.5)
         
-        # Temporary AI logic
-        legal_moves = board.get_legal_moves()
-        if not legal_moves:
-            break
-            
-        col = random.choice(legal_moves)
-        print(f"AI {player_num} drops a piece in column {col}.")
-        board.apply_move(col, player_num)
+        # Both players use the Minimax algorithm here
+        col = get_best_move(board, depth=4)
         
+        print(f"AI {current_player} drops a piece in column {col}.")
+        board.apply_move(col, current_player)
+        
+        # WIN CHECK
         is_terminal, winner = board.is_terminal_state()
         if is_terminal:
             print("\n========================================")
             print(" FINAL SIMULATION BOARD:")
             board.print_board()
             
-            if winner == 1:
+            if winner == PLAYER_1:
                 print("Game Over! AI 1 wins!")
-            elif winner == 2:
+            elif winner == PLAYER_2:
                 print("Game Over! AI 2 wins!")
             else:
                 print("Game Over! It's a draw!")
