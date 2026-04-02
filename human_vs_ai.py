@@ -1,9 +1,19 @@
 import time
 from board_logic import Connect4Board, PLAYER_1, PLAYER_2
-from minimax_search import get_best_move
+
+# Import BOTH AIs and alias them so their names don't clash
+from minimax_search import get_best_move as get_minimax_move
+from alpha_beta_pruning import get_best_move as get_alphabeta_move
 
 def play_human_vs_ai():
     print("\n--- Starting Human vs AI Game ---")
+    print("Which AI opponent would you like to face?")
+    print("1. Standard Minimax")
+    print("2. Alpha-Beta Pruning")
+    
+    choice = input("Select an option (1 or 2): ")
+    use_pruning = (choice == '2')
+    
     board = Connect4Board()
     game_over = False
     turn = 0 
@@ -29,12 +39,16 @@ def play_human_vs_ai():
             print("AI is thinking...")
             time.sleep(0.5)
             
-            # Yahya's Minimax algorithm finds the optimal move
-            col = get_best_move(board, depth=5)
-            
-            print(f"AI drops a piece in column {col}.")
+            # Switchboard logic executes the chosen AI
+            if use_pruning:
+                col, pruned_count = get_alphabeta_move(board, depth=5)
+                print(f"AI drops a piece in column {col}. (Pruned {pruned_count} branches!)")
+            else:
+                col = get_minimax_move(board, depth=5)
+                print(f"AI drops a piece in column {col}.")
+                
             board.apply_move(col, PLAYER_2)
-        
+            
         # WIN CHECK
         is_terminal, winner = board.is_terminal_state()
         if is_terminal:
@@ -42,11 +56,11 @@ def play_human_vs_ai():
             print(" FINAL BOARD:")
             board.print_board()
             
-            if winner == PLAYER_1: 
+            if winner == PLAYER_1:
                 print("You win!")
-            elif winner == PLAYER_2: 
+            elif winner == PLAYER_2:
                 print("AI wins!")
-            else: 
+            else:
                 print("It's a draw!")
                 
             game_over = True

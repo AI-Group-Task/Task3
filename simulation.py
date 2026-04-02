@@ -1,9 +1,19 @@
 import time
 from board_logic import Connect4Board, PLAYER_1, PLAYER_2
-from minimax_search import get_best_move
+
+# Imported BOTH AIs and alias them so their names don't clash
+from minimax_search import get_best_move as get_minimax_move
+from alpha_beta_pruning import get_best_move as get_alphabeta_move
 
 def run_ai_simulation():
     print("\n--- Starting AI vs AI Simulation ---")
+    print("Which algorithm should the AI use?")
+    print("1. Standard Minimax (Slow)")
+    print("2. Alpha-Beta Pruning (Fast)")
+    
+    choice = input("Select an option (1 or 2): ")
+    use_pruning = (choice == '2')
+    
     board = Connect4Board()
     game_over = False
     turn = 0 
@@ -14,12 +24,15 @@ def run_ai_simulation():
         board.print_board()
         
         print(f"AI {current_player} is thinking...")
-        time.sleep(0.5)
+        time.sleep(0.5) 
         
-        # Both players use the Minimax algorithm here
-        col = get_best_move(board, depth=4)
-        
-        print(f"AI {current_player} drops a piece in column {col}.")
+        if use_pruning:
+            col, pruned_count = get_alphabeta_move(board, depth=4)
+            print(f"AI {current_player} plays column {col} | Nodes Pruned: {pruned_count}")
+        else:
+            col = get_minimax_move(board, depth=4)
+            print(f"AI {current_player} plays column {col}")
+            
         board.apply_move(col, current_player)
         
         # WIN CHECK
