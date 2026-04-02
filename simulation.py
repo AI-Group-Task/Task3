@@ -27,10 +27,10 @@ def run_ai_simulation():
         time.sleep(0.5) 
         
         if use_pruning:
-            col, pruned_count = get_alphabeta_move(board, depth=4)
+            col, pruned_count = get_alphabeta_move(board, depth=4, player=current_player)
             print(f"AI {current_player} plays column {col} | Nodes Pruned: {pruned_count}")
         else:
-            col = get_minimax_move(board, depth=4)
+            col = get_minimax_move(board, depth=4, player=current_player)
             print(f"AI {current_player} plays column {col}")
             
         board.apply_move(col, current_player)
