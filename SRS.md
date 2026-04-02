@@ -34,7 +34,7 @@
 * **Internal Dependencies:** All other modules depend on the speed and accuracy of this component.
 
 ### Role 2: Minimax Algorithm Implementation
-**Assigned to:** Student 2
+**Assigned to:** Yahya
 * **Module Ownership:** `minimax_search.py`
 * **Technical Specifications:** You will construct the core recursive search tree. You must accurately model the adversarial nature of the game, alternating between the maximizing agent (the AI) and the minimizing agent (the opponent).
 * **Required Deliverables:**
@@ -43,7 +43,7 @@
   * Ensuring the function correctly propagates both the optimal score and the optimal corresponding move index up the recursive call stack.
 
 ### Role 3: Alpha-Beta Pruning Optimization
-**Assigned to:** Student 3
+**Assigned to:** Esteban918
 * **Module Ownership:** `alpha_beta_pruning.py`
 * **Technical Specifications:** You are tasked with reducing the time complexity of the Minimax algorithm. You must track the highest guaranteed score for the maximizer ($\alpha$) and the lowest guaranteed score for the minimizer ($\beta$).
 * **Required Deliverables:**
@@ -52,7 +52,7 @@
   * Instrumentation of the search function to continuously log the aggregate number of "pruned" nodes per move for later empirical analysis.
 
 ### Role 4: Heuristic/Utility Function Design
-**Assigned to:** Student 4
+**Assigned to:** FabianP
 * **Module Ownership:** `heuristic_evaluator.py`
 * **Technical Specifications:** You must mathematically define what constitutes an advantageous board position. Since the AI cannot compute the game to its conclusion in the mid-game, your utility function $U(s)$ dictates its intelligence.
 * **Required Deliverables:**
@@ -62,20 +62,20 @@
 
 ### Role 5: Experimental Data & Performance Metrics
 **Assigned to:** Jonardzz
-* **Module Ownership:** `performance_metrics.py`
+* **Module Ownership:** `simulation.py` and `performance_metrics.py`
 * **Technical Specifications:** You are responsible for generating the quantitative evidence required for Dr. Eick's grading rubric. You must prove that the Alpha-Beta optimization works and analyze the AI's performance at varying depths.
 * **Required Deliverables:**
-  * Automation scripts to simulate hundreds of AI vs. AI matches (e.g., Unpruned Minimax at Depth 4 vs. Alpha-Beta at Depth 6).
+  * Automation scripts (via `simulation.py`) to simulate hundreds of AI vs. AI matches.
   * Logging and statistical aggregation of two primary metrics: Execution time per move and Total nodes expanded per move.
   * Creation of professional data visualizations (graphs and tables) comparing these metrics, directly formatted for inclusion in the final 4-6 page report and class presentation.
 
 ### Role 6: UI/UX & Technical Documentation
-**Assigned to:** Student 6
-* **Module Ownership:** `main.py`, `README.md`, and the Final Report
-* **Technical Specifications:** You oversee the repository architecture and user experience. You must synthesize the components built by Roles 1-4 into a seamless, executable application.
+**Assigned to:** Olajide Olanipekun / SamsonDoski
+* **Module Ownership:** `main.py`, `ai_vs_human.py`, `human_vs_human.py`, `README.md`, `simulation.py` and the Final Report
+* **Technical Specifications:** You oversee the repository architecture and user experience. You must synthesize the components built by Roles 1-4 into a modular, executable CLI application.
 * **Required Deliverables:**
-  * Development of the main game loop, including handling human input validation and triggering the AI's response.
-  * Enforcement of version control standards within the repository (e.g., ensuring no broken code is merged into the `main` branch).
+  * Development of a main menu controller (`main.py`) that branches into independent, modular game loops for local multiplayer and human-vs-AI modes.
+  * Enforcement of version control standards within the repository.
   * Leadership and final editorial control over the mandatory 4-6 page academic report, ensuring all individual contributions are thoroughly documented and cited.
  ---
 
