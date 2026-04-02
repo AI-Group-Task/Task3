@@ -23,7 +23,7 @@ def test_apply_move():
     # The game should definitely not be over after one move
     is_terminal, winner = board.is_terminal_state()
     assert is_terminal == False
-    assert winner == 0
+    assert winner == None
 
 def test_full_column():
     """Tests that a full column rejects new pieces and is removed from legal moves."""
