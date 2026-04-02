@@ -43,7 +43,7 @@
   * Ensuring the function correctly propagates both the optimal score and the optimal corresponding move index up the recursive call stack.
 
 ### Role 3: Alpha-Beta Pruning Optimization
-**Assigned to:** Student 3
+**Assigned to:** Esteban918
 * **Module Ownership:** `alpha_beta_pruning.py`
 * **Technical Specifications:** You are tasked with reducing the time complexity of the Minimax algorithm. You must track the highest guaranteed score for the maximizer ($\alpha$) and the lowest guaranteed score for the minimizer ($\beta$).
 * **Required Deliverables:**
@@ -52,7 +52,7 @@
   * Instrumentation of the search function to continuously log the aggregate number of "pruned" nodes per move for later empirical analysis.
 
 ### Role 4: Heuristic/Utility Function Design
-**Assigned to:** Student 4
+**Assigned to:** FabianP
 * **Module Ownership:** `heuristic_evaluator.py`
 * **Technical Specifications:** You must mathematically define what constitutes an advantageous board position. Since the AI cannot compute the game to its conclusion in the mid-game, your utility function $U(s)$ dictates its intelligence.
 * **Required Deliverables:**
