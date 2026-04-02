@@ -115,6 +115,23 @@ class Connect4Board:
         return count
 
     def print_board(self):
+        symbols = {
+            EMPTY: '·',
+            PLAYER_1: 'X',
+            PLAYER_2: 'O'
+        }
+    
+        print("\n   0   1   2   3   4   5   6")
+        print(" ┌───┬───┬───┬───┬───┬───┬───┐")
+    
         for row in range(ROWS - 1, -1, -1):
-            print([self.get_cell(row, col) for col in range(COLS)])
+            print(" │", end="")
+            for col in range(COLS):
+                print(f" {symbols[self.get_cell(row, col)]} │", end="")
+            print()
+    
+            if row > 0:
+                print(" ├───┼───┼───┼───┼───┼───┼───┤")
+    
+        print(" └───┴───┴───┴───┴───┴───┴───┘")
         print()
