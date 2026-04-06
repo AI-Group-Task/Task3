@@ -1,4 +1,4 @@
-# Import the modular game engine we just built
+# Import the modular game engine just built
 from simulation_engine import run_match
 
 def run_ai_simulation():
